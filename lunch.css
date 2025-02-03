@@ -1,0 +1,235 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  flex: 1; /* Allow container to expand to fill available space */
+}
+
+.navbar {
+  background-color: #4c6ef5; /* Vibrant blue navbar */
+  color: white;
+  padding: 15px;
+  display: flex;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow to navbar */
+}
+
+.navbar h1 {
+  margin: 0;
+  font-weight: 600; /* Semi-bold heading */
+}
+
+.view-sales-btn button {
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.view-sales-btn button:hover {
+  background-color: #ff9900;
+}
+
+.beer-list {
+  display: grid;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+  flex: 1; /* Allow beer list to expand */
+}
+
+.beer-list h2 {
+  margin-bottom: 10px;
+  color: #4c6ef5; /* Blue headings */
+}
+
+.veg-category, .nonveg-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.beer-card {
+  background-color: #292929;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px #d2c9a7;
+  text-align: center;
+  border: 2px solid #ffcc00;
+  transition: 0.3s;
+}
+.beer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 0px #766b5a;
+}
+
+.beer-card img {
+  width: 240px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.beer-card h3 {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.beer-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+/* Quantity Input */
+.quantity {
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid #ffcc00;
+  text-align: center;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* Add to Cart Button */
+.beer-card button {
+  background-color: #5aa3e8;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.beer-card button:hover {
+  background-color: #6b604f;
+}
+/* Cart Section */
+.cart {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 30px;
+  border: 2px solid #ffcc00;
+  box-shadow: 5px 5px 0px #ffcc00;
+}
+
+.cart h3 {
+  font-size: 1.5rem;
+  color: #ffcc00;
+}
+
+/* Cart Items */
+#cart-items {
+  margin: 10px 0;
+}
+
+#cart-items .cart-item { /* Example styling for each item */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+#cart-items .cart-item img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+#cart-items .cart-item .item-details {
+  flex-grow: 1;
+}
+
+
+/* Total Price */
+.total-amount {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Payment Method */
+.payment-method {
+  margin-top: 10px;
+}
+
+.payment-method select {
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* Record Sale Button */
+.record-btn {
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.record-btn:hover {
+  background-color: #ff9900;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .beer-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .beer-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .veg-category, .nonveg-category {
+    justify-content: center;
+  }
+  .beer-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+  .cart {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .beer-card {
+    flex: 1 1 calc(100% - 20px);
+  }
+}

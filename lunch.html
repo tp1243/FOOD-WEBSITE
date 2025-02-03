@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlatefulParadise</title>
+  <link rel="stylesheet" href="lunch.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <h1>Lunch Meals</h1>
+      <div class="view-sales-btn">
+        <button onclick="viewSales()">View Sales</button>
+      </div>
+    </nav>
+
+    <div class="beer-list">
+      <h2>Veg Items</h2>
+      <div class="veg-category">
+        <div class="beer-card" data-name="Masala Dosa" data-price="150">
+            <img src="assets/download (10).jpg" alt="Masala Dosa">
+            <h3>Masala Dosa</h3>
+            <p>₹150</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="beer-card" data-name="Paneer Tikka" data-price="220">
+            <img src="assets/download (11).jpg" alt="Paneer Tikka">
+            <h3>Paneer Tikka</h3>
+            <p>₹220</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="beer-card" data-name="Vegetable Biryani" data-price="180">
+            <img src="assets/download (12).jpg" alt="Vegetable Biryani">
+            <h3>Vegetable Biryani</h3>
+            <p>₹180</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="beer-card" data-name="Palak Paneer" data-price="200">
+            <img src="assets/download (13).jpg" alt="Palak Paneer">
+            <h3>Palak Paneer</h3>
+            <p>₹200</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Dal Makhani" data-price="160">
+            <img src="assets/download (14).jpg" alt="Dal Makhani">
+            <h3>Dal Makhani</h3>
+            <p>₹160</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Rajma Chawal" data-price="140">
+            <img src="assets/download (15).jpg" alt="Rajma Chawal">
+            <h3>Rajma Chawal</h3>
+            <p>₹140</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Aloo Gobi" data-price="130">
+            <img src="assets/download (16).jpg" alt="Aloo Gobi">
+            <h3>Aloo Gobi</h3>
+            <p>₹130</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Malai Kofta" data-price="250">
+            <img src="assets/download (17).jpg" alt="Malai Kofta">
+            <h3>Malai Kofta</h3>
+            <p>₹250</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+
+      <h2>Non-Veg Items</h2>
+      <div class="nonveg-category">
+        <div class="beer-card" data-name="Spicy Chicken Wings" data-price="350">
+            <img src="assets/download (18).jpg" alt="Spicy Chicken Wings">
+            <h3>Spicy Chicken Wings</h3>
+            <p>₹350</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="beer-card" data-name="Mutton Biryani" data-price="420">
+            <img src="assets/download (19).jpg" alt="Mutton Biryani">
+            <h3>Mutton Biryani</h3>
+            <p>₹420</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="beer-card" data-name="Chicken Tikka Masala" data-price="380">
+            <img src="assets/download (20).jpg" alt="Chicken Tikka Masala">
+            <h3>Chicken Tikka Masala</h3>
+            <p>₹380</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="beer-card" data-name="Fish Fry" data-price="300">
+            <img src="assets/download (21).jpg" alt="Fish Fry">
+            <h3>Fish Fry</h3>
+            <p>₹300</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Egg Curry" data-price="280">
+            <img src="assets/download (22).jpg" alt="Egg Curry">
+            <h3>Egg Curry</h3>
+            <p>₹280</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Butter Chicken" data-price="400">
+            <img src="assets/download (23).jpg" alt="Butter Chicken">
+            <h3>Butter Chicken</h3>
+            <p>₹400</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Tandoori Chicken" data-price="360">
+            <img src="assets/download (24).jpg" alt="Tandoori Chicken">
+            <h3>Tandoori Chicken</h3>
+            <p>₹360</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    
+        <div class="beer-card" data-name="Pork Ribs" data-price="450">
+            <img src="assets/download (25).jpg" alt="Pork Ribs">
+            <h3>Pork Ribs</h3>
+            <p>₹450</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <div class="cart">
+      <h3>Cart</h3>
+      <div id="cart-items"></div>
+      <div class="total-amount">
+        <strong>Total: ₹<span id="total-price">0</span></strong>
+      </div>
+      <div class="payment-method">
+        <label for="payment">Payment Method: </label>
+        <select id="payment">
+          <option value="upi">UPI</option>
+          <option value="cash">Cash</option>
+          <option value="card">Card</option>
+        </select>
+      </div>
+      <button class="record-btn" onclick="recordSale()">Record Sale</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

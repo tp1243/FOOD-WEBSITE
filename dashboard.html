@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Ordering Dashboard</title>
+  <link rel="stylesheet" href="grand.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For chart integration -->
+</head>
+
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <h2>PlatefulParadise</h2>
+      <div class="user-info">
+        <i class='bx bxs-user-circle' id="user-logo"></i> <!-- Font Awesome User Icon -->
+        <p id="user-name" class="user-name">Welcome, User!<a href="register.html"> <i class='bx bx-log-in'
+              style="color:white ; font-size: 25px;  "></i></p></a>
+      </div>
+      <ul>
+        <li><a href="#" class="active"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
+        <li><a href="orders.html"><i class='bx bx-cart-add'></i> Orders</a></li>
+        <li><a href="#"><i class='bx bx-food-menu'></i> Menu Items</a></li>
+        <li><a href="#"><i class='bx bxs-user-detail'></i> Customers</a></li>
+        <li><a href="#"><i class='bx bxs-report'></i> Reports</a></li>
+        <li><a href="#"><i class='bx bx-cog'></i> Settings</a></li>
+        <li><a href="register.html"><i class='bx bx-log-out'></i> Logout</a></li>
+      </ul>
+      <hr>
+
+      <footer class="sidebar-footer">
+        <p>&copy; 2025 PlatefulParadise. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Terms of Service</a> |
+          <a href="#">Contact Us</a>
+        </div>
+
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="social-icon"><i class='bx bxl-twitter'></i></a>
+          <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </footer>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <header>
+        <h1 id="welcome-message">"Welcome to a world of flavor!"</h1>
+        <div class="search-container">
+          <input type="text" placeholder="Search Your Meal..." id="search-bar"><i class='bx bx-search-alt-2'></i>
+          <ul id="dropdown-list" class="dropdown-list"></ul>
+        </div>
+      </header>
+
+
+      <hr> <!-- Horizontal line added here -->
+      <section class="food-categories">
+        <h2>Explore Meal Categories</h2>
+        <div class="categories-container">
+          <!-- Category 1: Breakfast -->
+          <div class="category-card">
+            <img src="https://simply-delicious-food.com/wp-content/uploads/2022/09/Breakfast-board28.jpg"
+              alt="Breakfast" class="category-image">
+            <h3>Breakfast</h3>
+            <p>Start your day with a delicious and hearty breakfast.</p>
+            <a href="breakfast.html">
+              <button class="center">Show more</button>
+            </a>
+          </div>
+
+          <!-- Category 2: Lunch -->
+          <div class="category-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSneBguKyINXBbUh2lQrR7lL3XGkZ1wznELcg&s"
+              alt="Lunch" class="category-image">
+            <h3>Lunch</h3>
+            <p>Fuel up with our fresh and satisfying lunch options.</p>
+            <a href="lunch.html">
+              <button class="center">Show more</button>
+            </a>
+
+          </div>
+
+          <!-- Category 3: Dinner -->
+          <div class="category-card">
+            <img
+              src="https://media.istockphoto.com/id/613556530/photo/eating-delicous-homemade-chicken-curry-dish-with-rice.jpg?s=612x612&w=0&k=20&c=q_kUV6Un4IJiKqTL606q-r7ZzqWktDuvfaAU4EBHZ7g="
+              alt="Dinner" class="category-image">
+            <h3>Dinner</h3>
+            <p>End your day with a flavorful and comforting dinner.</p>
+            <a href="index.html">
+              <button class="center">Show more</button>
+            </a>
+          </div>
+
+          <!-- Category 4: Desserts -->
+          <div class="category-card">
+            <img src="https://carveyourcraving.com/wp-content/uploads/2020/09/gulab-jamun-mousse-layered-dessert.jpg"
+              alt="Desserts" class="category-image">
+            <h3>Desserts</h3>
+            <p>Indulge in our sweet and tempting desserts.</p>
+            <a href="index.html">
+              <button class="center">Show more</button>
+            </a>
+          </div>
+
+
+        </div>
+      </section>
+      <br>
+      <hr>
+
+      <h1>Combo Offers</h1>
+
+      <div class="video-container">
+        <!-- First set of videos -->
+        <video autoplay muted loop class="video-set first-set">
+          <source src="assets/canva-7ExE7XfiSYY.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="video-set first-set">
+          <source src="assets/canva-ALfxoDi8GKk.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="video-set first-set">
+          <source src="assets/canva-vI7po1wTpLk.mp4" type="video/mp4">
+        </video>
+
+        <!-- Second set of videos (Initially Hidden) -->
+        <video autoplay muted loop class="video-set second-set hidden">
+          <source src="assets/canva-sP5k-V8haPw.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="video-set second-set hidden">
+          <source src="assets/canva-p7BZ8Y4Emjs.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop class="video-set second-set hidden">
+          <source src="assets/canva-cRTux815FDc.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <button id="switch-btn">Show More</button>
+      <hr>
+
+    </div>
+    <script>
+      document.getElementById("switch-btn").addEventListener("click", function () {
+        let firstSet = document.querySelectorAll(".first-set");
+        let secondSet = document.querySelectorAll(".second-set");
+
+        firstSet.forEach(video => video.classList.toggle("hidden"));
+        secondSet.forEach(video => video.classList.toggle("hidden"));
+      });
+    </script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="grand.js"></script>
+</body>
+
+</html>

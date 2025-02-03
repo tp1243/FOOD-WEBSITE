@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e1e2e, #3a3a56);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif; /* Added a default font */
+        }
+
+        h1 {
+            color: #ffde59;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #clearOrdersButton {
+            background-color: #ff4d4d;
+            color: white;
+            border: 2px solid #e60000;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            width: 100%; /* Full width button */
+            margin-bottom: 20px;
+        }
+
+        #clearOrdersButton:hover {
+            background-color: #e60000;
+            border-color: #b30000;
+        }
+
+        #clearOrdersButton:active {
+            background-color: #b30000;
+            border-color: #800000;
+        }
+
+        #clearOrdersButton:disabled {
+            background-color: #ccc;
+            border-color: #999;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+            margin-bottom: 20px;
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            display: block; /* Key for responsiveness */
+        }
+
+        table:hover {
+            transform: scale(1.02);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Prevent text wrapping */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.9rem; /* Slightly smaller font size */
+        }
+
+        th {
+            background-color: #ff6b6b;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 222, 89, 0.3);
+            color: black;
+            cursor: pointer;
+        }
+
+        .view-details {
+            background-color: #007bff;
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.85rem; /* Slightly smaller button */
+
+        }
+
+        .view-details:hover {
+            background-color: #0056b3;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item-list li {
+            margin-bottom: 4px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        #orderDetailsModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%; /* Occupy most of the screen */
+            max-width: 600px; /* Set a maximum width */
+        }
+        #orderDetailsModal h2{
+          text-align: center;
+        }
+        #orderDetailsModal button{
+          background-color: #f44336; 
+          color: white; 
+          padding: 10px 15px; 
+          border: none; 
+          border-radius: 4px; 
+          cursor: pointer;
+          display: block; /* Makes the button a block element */
+          margin: 0 auto; /* Centers the button */
+          width: fit-content; /* Adjust width as needed */
+        }
+
+        /* Media Query for smaller screens */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 8px;
+                white-space: nowrap;
+            }
+            .hide-on-mobile{
+              display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Orders</h1>
+    <button id="clearOrdersButton">Clear All Orders</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Order No.</th>
+                <th>Items & Quantity</th>
+                <th>Total Amount</th>
+                <th class="hide-on-mobile">Date & Time</th>
+                <th class="hide-on-mobile">Payment Mode</th>
+                <th>Feedback</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="orderDetailsModal">
+        <h2 id="modalOrderNo">Order Details</h2>
+        <div id="modalOrderItems"></div>
+        <p id="modalOrderTotal"></p>
+        <p id="modalOrderDateTime"></p>
+        <p id="modalOrderPayment"></p>
+        <button onclick="closeModal()">Close</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="orders-page.js"></script>
+
+    <script>
+      function closeModal(){
+        document.getElementById('orderDetailsModal').style.display = 'none';
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #7fcbbc;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #252525;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background-color: #575757;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  /* Vertically center the items */
+  margin-bottom: 20px;
+}
+
+#user-logo {
+  font-size: 32px;
+  color: #f39c12;
+  /* Adjust color as needed */
+  margin-right: 10px;
+  /* Space between the icon and the user name */
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f39c12;
+  /* Adjust color as needed */
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid black;
+  /* Sets the color of the horizontal line to black */
+  margin: 20px 0;
+  /* Adds some space above and below the line */
+}
+
+
+.sidebar-footer {
+  margin-top: auto;
+  /* Pushes the footer to the bottom */
+  text-align: center;
+  color: #bbb;
+  font-size: 14px;
+  padding-top: 1px;
+}
+
+.footer-links {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 15px;
+  position: relative;
+}
+
+.social-icons a {
+  color: #bbb;
+  margin: 0 10px;
+  font-size: 35px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #f39c12;
+}
+
+.food-categories {
+  margin-top: 30px;
+}
+
+.food-categories h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 27px;
+  color: #333;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.category-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.category-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #f39c12;
+}
+
+.category-card p {
+  font-size: 14px;
+  color: black;
+  margin: 10px 0;
+  font-family: sans-serif;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Style for the 'Show more' button */
+button {
+  background-color: #f39c12;
+  /* Bright orange color to match the site theme */
+  color: white;
+  /* Text color */
+  border: none;
+  /* Remove default border */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 10px 20px;
+  /* Padding for the button */
+  font-size: 16px;
+  /* Font size */
+  cursor: pointer;
+  /* Show pointer on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Slight shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Smooth transitions */
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #e67e22;
+  /* Slightly darker shade on hover */
+  transform: translateY(-2px);
+  /* Lift effect */
+}
+
+/* Focus effect */
+button:focus {
+  outline: 2px solid #e67e22;
+  /* Add outline for accessibility */
+  outline-offset: 2px;
+}
+
+/* Button inside an anchor tag styling */
+a button {
+  display: inline-block;
+  /* Ensure it behaves like a button */
+}
+
+/* Center the button if needed */
+button.center {
+  display: block;
+  margin: 20px auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.chart-container1 {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.carousel-container {
+  width: 90%;
+  overflow: hidden;
+  position: relative;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  margin-left: 30px;
+}
+
+.carousel {
+  display: flex;
+  gap: 15px;
+  width: 200%;
+  animation: scrollCards 10s linear infinite;
+}
+
+.card {
+  flex: 0 0 250px;
+  background: #444;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffcc00;
+}
+
+@keyframes scrollCards {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  gap: 14px;
+  position: relative;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.video-set {
+  width: 32%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin-top: 20px;
+  background: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 27px;
+}
+
+button:hover {
+  background: darkred;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-right: 25px;
+}
+
+#search-bar {
+  width: 40%;
+  padding: 10px 40px 10px 15px; /* Adjust padding to leave space for the icon */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-left: 480px;
+}
+
+#search-bar:focus {
+  outline: none;
+  border-color: #ff4c4c; /* Example focus color */
+}
+
+.search-container i {
+  position: absolute;
+  right: 10px; /* Position the icon on the right side */
+  font-size: 21px;
+  color: #333; /* Icon color */
+  cursor: pointer;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px 0;
+  margin: 0;
+  display: none; /* Initially hidden */
+  z-index: 10;
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #f0f0f0;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+
+  #search-bar {
+    width: 60%;
+    margin-left: 200px;
+  }
+
+  /* Offer Video Styling for larger screens (if needed) */
+  .offer-video-container { /* Container for offer videos */
+    display: flex;
+    flex-wrap: wrap; /* Allows videos to wrap to the next line */
+    justify-content: space-around; /* Distributes videos evenly */
+  }
+
+  .offer-video {
+    width: 30%; /* Adjust as needed */
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  #search-bar {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .categories-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-set {
+    width: 100%;
+    height: auto;
+    margin-right: 28px;
+  }
+
+  /* Offer Video Styling for medium screens */
+  .offer-video-container {
+    flex-direction: column; /* Stack videos vertically */
+    align-items: center;
+  }
+
+  .offer-video {
+    width: 80%; /* Make videos wider */
+    margin: 10px 0; /* Adjust margin */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar h2 {
+    font-size: 18px;
+  }
+
+  .sidebar ul li a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container {
+    width: 100%;
+    justify-content: center;
+    margin-left: 22px;
+  }
+
+  #search-bar {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .category-card {
+    width: 90%;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .carousel-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Offer Video Styling for small screens */
+  .offer-video-container {
+    flex-direction: column; /* Ensure vertical stacking */
+    align-items: center;
+  }
+
+  .offer-video {
+    width: 90%; /* Full width on small screens */
+    margin: 10px 0;
+  }
+}

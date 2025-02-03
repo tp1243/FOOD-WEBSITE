@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard - Neubrutalism</title>
+    <style>
+        /* 🔥 Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e1e2e, #3a3a56);
+            color: #fff;
+            padding: 2rem;
+        }
+
+        /* 🌟 Main Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 10px 10px 0px #000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 🎯 Title Styling */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            font-weight: bold;
+            color: #ffde59;
+            text-transform: uppercase;
+            background: #ff6b6b;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 4px solid black;
+            box-shadow: 6px 6px 0 black;
+        }
+
+        /* 🔙 Back to Sales Button */
+        .back-to-sales-btn {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-to-sales-btn button {
+            background: linear-gradient(135deg, #ff6b6b, #ffde59);
+            color: black;
+            border: 3px solid black;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 5px 5px 0 black;
+            transition: all 0.3s ease-in-out;
+            margin-top: 15px;
+        }
+
+        .back-to-sales-btn button:hover {
+            transform: scale(1.1);
+            box-shadow: 7px 7px 0 black;
+        }
+
+        /* 📊 Sales Summary Cards */
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 30px;
+        }
+
+        .summary-card {
+            flex: 1;
+            background: linear-gradient(135deg, #4cc9f0, #4361ee);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 5px 5px 0 black;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .summary-card:hover {
+            transform: scale(1.05);
+            box-shadow: 7px 7px 0 black;
+        }
+
+        .summary-card h2 {
+            font-size: 1.2rem;
+        }
+
+        .summary-card p {
+            font-size: 2rem;
+            font-weight: bold;
+            animation: countUp 2s ease-in-out forwards;
+        }
+
+        /* 🔥 Glowing Table */
+        .table-container {
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 6px 6px 0 black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 4px 4px 0 black;
+        }
+
+        th {
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: 2px solid black;
+        }
+
+        td {
+            background: #f8f8f8;
+            color: black;
+            padding: 1rem;
+            border: 2px solid black;
+        }
+
+        /* 🎭 Table Row Hover */
+        tbody tr:hover {
+            background: #ffde59;
+            color: black;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* ❌ Delete Button */
+        .delete-btn {
+            background: #ff3b3b;
+            color: white;
+            padding: 9px 17px;
+            font-size: 14px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 3px 3px 0 black;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 5px 5px 0 black;
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 768px) {
+            .summary {
+                flex-direction: column;
+            }
+
+            .summary-card {
+                width: 100%;
+            }
+
+            th,
+            td {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        /* 🎞️ Keyframes */
+        @keyframes countUp {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .pay-now-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 3px 3px 0 black;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .pay-now-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 5px 5px 0 black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sales Dashboard</h1>
+        <div class="back-to-sales-btn">
+            <button onclick="goToSales()">Back to Sales Recording</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order No.</th>
+                        <th>Items & Quantity</th>
+                        <th>Total Amount</th>
+                        <th>Date & Time</th>
+                        <th>Payment Mode</th>
+                        <th>Payment Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="summary">
+            <div class="summary-card">
+                <h2>Today's Total Sale</h2>
+                <p>₹0</p>
+            </div>
+            <div class="summary-card">
+                <h2>This Month's Total Sale</h2>
+                <p>₹0</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="sales-page.js"></script>
+
+</body>
+
+</html>

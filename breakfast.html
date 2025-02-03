@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PlatefulParadise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+        <h1>Breakfast Meals</h1>
+        <!-- View Sales Button -->
+        <div class="view-sales-btn">
+            <button onclick="viewSales()">View Sales</button>
+        </div>
+        </nav>
+        <div class="beer-list">
+            <div class="beer-card" data-name="Pancakes with Maple Syrup" data-price="180">
+                <img src="assets/download.jpg" alt="Pancakes with Maple Syrup">
+                <h3>Pancakes with Maple Syrup</h3>
+                <p>₹180</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Classic English Breakfast" data-price="250">
+                <img src="assets/download (1).jpg" alt="Classic English Breakfast">
+                <h3>Classic English Breakfast</h3>
+                <p>₹250</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="French Toast with Berries" data-price="220">
+                <img src="assets/download (2).jpg" alt="French Toast with Berries">
+                <h3>French Toast with Berries</h3>
+                <p>₹220</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Veggie Omelette" data-price="150">
+                <img src="assets/download (3).jpg" alt="Veggie Omelette">
+                <h3>Veggie Omelette</h3>
+                <p>₹150</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Avocado Toast with Poached Egg" data-price="200">
+                <img src="assets/download (4).jpg" alt="Avocado Toast with Poached Egg">
+                <h3>Avocado Toast with Poached Egg</h3>
+                <p>₹200</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Breakfast Burrito" data-price="230">
+                <img src="assets/download (9).jpg" alt="Breakfast Burrito">
+                <h3>Breakfast Burrito</h3>
+                <p>₹230</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Granola Yogurt Bowl" data-price="190">
+                <img src="assets/yogurt-granola-breakfast-bowl-healthy.jpg" alt="Granola Yogurt Bowl">
+                <h3>Granola Yogurt Bowl</h3>
+                <p>₹190</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Fruit Salad with Honey Drizzle" data-price="160">
+                <img src="assets/download (6).jpg" alt="Fruit Salad with Honey Drizzle">
+                <h3>Fruit Salad with Honey Drizzle</h3>
+                <p>₹160</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Peanut Butter Banana Toast" data-price="140">
+                <img src="assets/download (7).jpg" alt="Peanut Butter Banana Toast">
+                <h3>Peanut Butter Banana Toast</h3>
+                <p>₹140</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            <div class="beer-card" data-name="Scrambled Eggs with Sausages" data-price="240">
+                <img src="assets/download (8).jpg" alt="Scrambled Eggs with Sausages">
+                <h3>Scrambled Eggs with Sausages</h3>
+                <p>₹240</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button onclick="addToCart(this)">Add to Cart</button>
+            </div>
+            
+            
+        </div>
+
+        <div class="cart">
+            <h3>Cart</h3>
+            <div id="cart-items"></div>
+            <div class="total-amount">
+                <strong>Total: ₹<span id="total-price">0</span></strong>
+            </div>
+            <div class="payment-method">
+                <label for="payment">Payment Method: </label>
+                <select id="payment">
+                    <option value="upi">UPI</option>
+                    <option value="cash">Cash</option>
+                    <option value="card">Card</option>
+                </select>
+            </div>
+            <button class="record-btn" onclick="recordSale()">Record Sale</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+<!-- Load Firebase config after Firebase is defined -->
+<script src="firebase-config.js"></script>
+
+<!-- Load script.js last so it has access to `db` -->
+<script src="script.js"></script>
+
+</body>
+
+</html>
