@@ -221,6 +221,7 @@ h1 {
   .btn {
     font-size: 14px;
     padding: 12px;
+    margin-left: 10px;
   }
 
   .social-login {
