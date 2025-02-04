@@ -182,6 +182,7 @@ h1 {
     flex-direction: column;
     width: 95%;
     height: auto;
+    background-color: #252323;
   }
 
   .image-grid {
