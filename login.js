@@ -26,6 +26,12 @@ loginButton.addEventListener("click", function (event) {
     .then((userCredential) => {
       const user = userCredential.user;
 
+      // Store login details in localStorage
+      localStorage.setItem("user", JSON.stringify({
+        displayName: user.displayName,
+        email: user.email,
+      }));
+
       // Redirect to dashboard
       window.location.href = `dashboard.html?name=${encodeURIComponent(user.displayName)}`;
     })

@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .profile-container {
+    width: 100%;
+  }
+  
+  .profile-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ff5733;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  .user-info {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-info p {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+  
+  .user-info span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  button {
+    padding: 12px 30px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #e14c2d;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  @media (max-width: 768px) {
+    .main-container {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    .profile-icon {
+      width: 100px;
+      height: 100px;
+      font-size: 36px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    .subtitle {
+      font-size: 16px;
+    }
+  
+    .user-info p {
+      font-size: 16px;
+    }
+  
+    button {
+      padding: 10px 25px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media (max-width: 480px) {
+    .main-container {
+      padding: 15px;
+      max-width: 95%;
+    }
+  
+    .profile-icon {
+      width: 80px;
+      height: 80px;
+      font-size: 30px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    .subtitle {
+      font-size: 14px;
+    }
+  
+    .user-info p {
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 8px 20px;
+      font-size: 12px;
+    }
+  }  
