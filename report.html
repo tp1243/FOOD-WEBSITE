@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website Weekly Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .chart-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .report-section {
+            text-align: left;
+            margin-top: 20px;
+            padding: 10px;
+            background: #333;
+            border-radius: 10px;
+        }
+        .report-section h3 {
+            color: #ff4c4c;
+        }
+        .list-item {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📊 Weekly Sales Report</h2>
+    <div class="container">
+
+        <!-- Weekly Sales Chart -->
+        <div class="chart-container">
+            <canvas id="foodSalesChart"></canvas>
+        </div>
+
+        <!-- Top Selling Items -->
+        <div class="report-section">
+            <h3>🔥 Top Selling Items</h3>
+            <ul id="topSellingItems"></ul>
+        </div>
+
+        <!-- Total Revenue -->
+        <div class="report-section">
+            <h3>💰 Total Revenue</h3>
+            <p id="totalRevenue"></p>
+        </div>
+
+        <!-- Order Breakdown -->
+        <div class="report-section">
+            <h3>🍽️ Orders by Category</h3>
+            <ul id="orderCategories"></ul>
+        </div>
+
+        <!-- Customer Reviews -->
+        <div class="report-section">
+            <h3>⭐ Customer Reviews Summary</h3>
+            <p id="reviewSummary"></p>
+        </div>
+
+        <!-- Most Active Customers -->
+        <div class="report-section">
+            <h3>🏆 Most Active Customers</h3>
+            <ul id="activeCustomers"></ul>
+        </div>
+
+        <!-- Pending vs Completed Orders -->
+        <div class="report-section">
+            <h3>📦 Order Status</h3>
+            <p id="orderStatus"></p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Weekly Sales Data
+        const ctx = document.getElementById('foodSalesChart').getContext('2d');
+        const salesData = {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            datasets: [{
+                label: "Orders Per Day",
+                data: [45, 60, 38, 75, 90, 120, 150], // Replace with real data
+                backgroundColor: ["#FF4C4C", "#FF7F50", "#FFA500", "#FFD700", "#ADFF2F", "#32CD32", "#008000"],
+                borderWidth: 1
+            }]
+        };
+        new Chart(ctx, { type: 'bar', data: salesData });
+
+        // Top Selling Items
+        const topItems = [
+            { name: "Cheese Burger", sales: 120 },
+            { name: "Pasta Alfredo", sales: 98 },
+            { name: "Chicken Wings", sales: 85 },
+            { name: "Caesar Salad", sales: 72 }
+        ];
+        document.getElementById("topSellingItems").innerHTML = topItems.map(item => `<li class="list-item">${item.name} - ${item.sales} sold</li>`).join("");
+
+        // Total Revenue
+        const totalRevenue = topItems.reduce((sum, item) => sum + item.sales * 10, 0); // Assuming $10 per item
+        document.getElementById("totalRevenue").textContent = `$${totalRevenue.toFixed(2)}`;
+
+        // Orders by Category
+        const orderCategories = [
+            { category: "Breakfast", count: 80 },
+            { category: "Lunch", count: 150 },
+            { category: "Dinner", count: 130 }
+        ];
+        document.getElementById("orderCategories").innerHTML = orderCategories.map(cat => `<li class="list-item">${cat.category}: ${cat.count} orders</li>`).join("");
+
+        // Customer Reviews Summary
+        const avgRating = 4.5; // Replace with actual data
+        document.getElementById("reviewSummary").textContent = `Average Rating: ⭐ ${avgRating}/5`;
+
+        // Most Active Customers
+        const activeCustomers = [
+            { name: "John Doe", orders: 15 },
+            { name: "Jane Smith", orders: 12 },
+            { name: "Alice Johnson", orders: 10 }
+        ];
+        document.getElementById("activeCustomers").innerHTML = activeCustomers.map(cust => `<li class="list-item">${cust.name} - ${cust.orders} orders</li>`).join("");
+
+        // Pending vs Completed Orders
+        const totalOrders = 380, completedOrders = 340;
+        document.getElementById("orderStatus").textContent = `Completed: ✅ ${completedOrders}, Pending: ⏳ ${totalOrders - completedOrders}`;
+    </script>
+
+</body>
+</html>

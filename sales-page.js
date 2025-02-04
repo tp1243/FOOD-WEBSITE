@@ -1,7 +1,7 @@
 // sales-page.js
 
 function goToSales() {
-    window.location.href = "index.html"; // Redirect to sales recording page
+    window.location.href = "breakfast.html"; // Redirect to sales recording page
 }
 
 // Load sales when the page is ready
