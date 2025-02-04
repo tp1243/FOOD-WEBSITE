@@ -205,7 +205,7 @@ input[type="radio"] {
 
     .email-signup input,
     .email-signup button {
-        width: 100%;
+        width: 50%;
         margin-bottom: 10px;
     }
 
