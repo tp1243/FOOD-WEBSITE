@@ -113,8 +113,7 @@ button:active {
 @media screen and (max-width: 768px) {
   .main-container {
     padding: 20px;
-    width: 70%;
-    margin-top: 10px;
+    width: 90%;
   }
 
   h1 {
