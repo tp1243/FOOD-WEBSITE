@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Settings</title>
+  <title>Settings</title>
   <link rel="stylesheet" href="settings.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <script type="module" src="settings.js" defer></script>
 </head>
 <body>
   <div class="main-container">
     <div class="container">
-      <div class="profile-container">
+      <h1>Account Settings</h1>
+      <p class="subtitle">Manage your profile and logout.</p>
+
+      <!-- User Info Section -->
+      <div class="user-info">
         <div class="profile-icon">
-          <span>AB</span>
+          <!-- User icon (bx-user) -->
+          <i class="bx bx-user"></i>
+          <span id="profile-text"></span> <!-- Profile icon letter will go here -->
         </div>
-        <h1>User Settings</h1>
-        <p class="subtitle">Manage your account details.</p>
-        <div class="user-info">
-          <p><strong>Name:</strong> <span id="user-name"></span></p>
-          <p><strong>Email:</strong> <span id="user-email"></span></p>
-        </div>
-        <button id="logout-btn" class="btn">Logout</button>
+        <p><span>Name:</span> <span id="user-name"></span></p>
+        <p><span>Email:</span> <span id="user-email"></span></p>
       </div>
+
+      <button id="logout-btn">Logout</button>
     </div>
   </div>
 </body>
