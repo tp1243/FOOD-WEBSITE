@@ -223,7 +223,8 @@ h1 {
   }
 
   .subtitle {
-    font-size: 12px;
+    font-size: 14px;
+    margin-left: 35px;
   }
 
   .btn {
