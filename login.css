@@ -191,6 +191,7 @@ h1 {
   .container {
     padding: 20px;
     text-align: center;
+    width: 76%;
   }
 
   .form-group {
