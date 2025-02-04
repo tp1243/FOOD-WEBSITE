@@ -114,6 +114,7 @@ button:active {
   .main-container {
     padding: 20px;
     width: 90%;
+    margin-top: 10px;
   }
 
   h1 {
