@@ -219,7 +219,7 @@ h1 {
 @media (max-width: 480px) {
   h1 {
     font-size: 22px;
-    text-align: center;
+    margin-left: 38px;
   }
 
   .subtitle {
