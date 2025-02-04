@@ -185,7 +185,7 @@ h1 {
 @media (max-width: 1024px) {
   .main-container {
     flex-direction: column;
-    width: 50%;
+    width: 95%;
     height: auto;
   }
 
