@@ -9,7 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #333;
-  
+
 }
 
 .main-container {
@@ -169,7 +169,7 @@ h1 {
   font-size: 14px;
   color: #555;
   margin-left: 160px;
-  
+
 }
 
 .login-link a {
@@ -190,7 +190,8 @@ h1 {
   }
 
   .image-grid {
-    display: none; /* Hides the image grid for better mobile layout */
+    display: none;
+    /* Hides the image grid for better mobile layout */
   }
 
   .container {
@@ -208,6 +209,8 @@ h1 {
 
   .subtitle {
     text-align: center;
+    margin-left: 50px;
+    font-size: 14px;
   }
 
   .form-group {
