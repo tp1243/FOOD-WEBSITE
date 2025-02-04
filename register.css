@@ -197,6 +197,12 @@ h1 {
     width: 100%;
     padding: 20px;
   }
+
+  .input-icon input {
+    width: 100%; /* Ensures the input takes the full width of the container */
+    box-sizing: border-box; /* Prevents content overflow */
+    padding: 10px; /* Adds padding inside input for better spacing */
+  }
 }
 
 @media (max-width: 768px) {
@@ -215,7 +221,9 @@ h1 {
   }
 
   .input-icon input {
-    width: 100%;
+    width: 100%; /* Ensures input fills available space */
+    padding: 12px;
+    font-size: 16px; /* Adjusts font size for smaller screens */
   }
 
   .btn {
@@ -247,8 +255,9 @@ h1 {
     font-size: 22px;
   }
 
-  .input-icon i {
-    font-size: 16px;
+  .input-icon input {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px;
   }
 
   .btn {
