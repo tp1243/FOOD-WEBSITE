@@ -49,6 +49,12 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
+// Initially disable the fields
+firstName.disabled = true;
+mobile.disabled = true;
+address.disabled = true;
+saveBtn.disabled = true;
+
 // Enable editing
 editBtn.addEventListener("click", () => {
   firstName.disabled = false;
