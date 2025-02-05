@@ -6,117 +6,116 @@
     <title>Orders Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            background: linear-gradient(135deg, #1e1e2e, #3a3a56);
-            color: #fff;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #111, #111);
+            font-family: 'Roboto', sans-serif;
+            color: #f7f7f7;
             padding: 20px;
-            font-family: sans-serif; /* Added a default font */
         }
 
         h1 {
-            color: #ffde59;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             text-align: center;
-            margin-bottom: 20px;
+            color: #f15d60;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-size: 2rem;
         }
 
         #clearOrdersButton {
-            background-color: #ff4d4d;
-            color: white;
-            border: 2px solid #e60000;
-            border-radius: 5px;
-            padding: 10px 20px;
+            background-color: #ff1c1f;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
             font-size: 16px;
             font-weight: bold;
+            border-radius: 8px;
+            width: 100%;
             cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s;
-            width: 100%; /* Full width button */
+            transition: background-color 0.3s;
             margin-bottom: 20px;
         }
 
         #clearOrdersButton:hover {
-            background-color: #e60000;
-            border-color: #b30000;
-        }
-
-        #clearOrdersButton:active {
-            background-color: #b30000;
-            border-color: #800000;
+            background-color: #ff1c1f;
         }
 
         #clearOrdersButton:disabled {
             background-color: #ccc;
-            border-color: #999;
             color: #666;
             cursor: not-allowed;
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
-            box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease-in-out;
-            margin-bottom: 20px;
-            overflow-x: auto; /* Enable horizontal scrolling if needed */
-            display: block; /* Key for responsiveness */
-        }
-
-        table:hover {
-            transform: scale(1.02);
+            border-radius: 8px;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+            background-color: #111;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         th, td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
+            font-size: 1rem;
+            color: #f7f7f7;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background-color 0.3s ease;
-            white-space: nowrap; /* Prevent text wrapping */
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: 0.9rem; /* Slightly smaller font size */
         }
 
         th {
-            background-color: #ff6b6b;
-            font-weight: bold;
+            background-color: #ff3b3f;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        tbody tr {
+            background-color: #2c2929;
+            transition: background-color 0.3s;
         }
 
         tbody tr:hover {
-            background-color: rgba(255, 222, 89, 0.3);
-            color: black;
+            background-color: #302e2e;
             cursor: pointer;
         }
 
         .view-details {
             background-color: #007bff;
-            color: white;
-            padding: 6px 10px;
-            border: none;
+            color: #fff;
+            padding: 8px 12px;
             border-radius: 4px;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 0.85rem; /* Slightly smaller button */
-
+            transition: background-color 0.3s;
         }
 
         .view-details:hover {
             background-color: #0056b3;
         }
 
+        .view-details:active {
+            background-color: #003f80;
+        }
+
         .item-list {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         .item-list li {
-            margin-bottom: 4px;
-            padding: 5px;
+            background-color: #343232;
+            padding: 8px;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.05);
+            margin-bottom: 10px;
         }
 
         #orderDetailsModal {
@@ -126,49 +125,59 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #333;
-            color: white;
-            padding: 20px;
+            color: #f7f7f7;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 600px;
             z-index: 1000;
-            width: 90%; /* Occupy most of the screen */
-            max-width: 600px; /* Set a maximum width */
-        }
-        #orderDetailsModal h2{
-          text-align: center;
-        }
-        #orderDetailsModal button{
-          background-color: #f44336; 
-          color: white; 
-          padding: 10px 15px; 
-          border: none; 
-          border-radius: 4px; 
-          cursor: pointer;
-          display: block; /* Makes the button a block element */
-          margin: 0 auto; /* Centers the button */
-          width: fit-content; /* Adjust width as needed */
         }
 
-        /* Media Query for smaller screens */
+        #orderDetailsModal h2 {
+            color: #ff3b3f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #orderDetailsModal p {
+            margin-bottom: 10px;
+        }
+
+        #orderDetailsModal button {
+            background-color: #ff3b3f;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        #orderDetailsModal button:hover {
+            background-color: #ff1c1f;
+        }
+
+        /* Media Queries for smaller screens */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             table {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
 
             th, td {
-                padding: 8px;
-                white-space: nowrap;
+                padding: 10px;
             }
-            .hide-on-mobile{
-              display: none;
+
+            #orderDetailsModal {
+                width: 90%;
+                max-width: 500px;
             }
         }
     </style>
@@ -188,9 +197,12 @@
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            <!-- Dynamic content will go here -->
+        </tbody>
     </table>
 
+    <!-- Order Details Modal -->
     <div id="orderDetailsModal">
         <h2 id="modalOrderNo">Order Details</h2>
         <div id="modalOrderItems"></div>
@@ -206,9 +218,9 @@
     <script src="orders-page.js"></script>
 
     <script>
-      function closeModal(){
-        document.getElementById('orderDetailsModal').style.display = 'none';
-      }
+        function closeModal() {
+            document.getElementById('orderDetailsModal').style.display = 'none';
+        }
     </script>
 </body>
 </html>
