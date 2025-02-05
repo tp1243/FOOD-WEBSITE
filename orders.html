@@ -161,23 +161,62 @@
             background-color: #ff1c1f;
         }
 
-        /* Media Queries for smaller screens */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             table {
                 font-size: 0.9rem;
+                width: 100%;
             }
 
             th, td {
+                padding: 8px;
+            }
+
+            #clearOrdersButton {
                 padding: 10px;
+                font-size: 14px;
             }
 
             #orderDetailsModal {
                 width: 90%;
-                max-width: 500px;
+                max-width: 400px;
+                padding: 15px;
+            }
+
+            #orderDetailsModal h2 {
+                font-size: 1.6rem;
+            }
+
+            .view-details {
+                padding: 6px 10px;
+            }
+
+            /* Hide non-essential columns on mobile */
+            th.hide-on-mobile, td.hide-on-mobile {
+                display: none;
+            }
+        }
+
+        /* Further improvements for very small devices */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 6px;
+            }
+
+            #clearOrdersButton {
+                padding: 8px;
+                font-size: 12px;
             }
         }
     </style>
