@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
@@ -14,101 +14,113 @@ body {
 }
 
 .main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: #fff;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
-}
-
-.container {
+  max-width: 450px;
   text-align: center;
 }
 
-h1 {
-  font-size: 28px;
+h1, h2 {
+  font-size: 22px;
   margin-bottom: 10px;
-  font-weight: bold;
   color: #333;
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 14px;
   color: #666;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.user-info {
+/* Read-Only User Info */
+.user-info, .edit-info {
   background-color: #f9f9f9;
   padding: 20px;
-  margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-bottom: 15px;
 }
 
 .user-info p {
-  font-size: 18px;
-  margin: 10px 0;
-  color: #333;
-}
-
-.user-info span {
-  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .profile-icon {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: #ff5733;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
-  font-size: 50px;
+  margin: 10px auto;
+  font-size: 40px;
   color: white;
-  background-color: #ff5733; /* Vibrant color for the icon */
-  margin-top: 0px;
 }
 
-.profile-icon i {
-  font-size: 45px; /* Adjust icon size */
-}
-
-.profile-icon span {
-  display: none; /* Initially hidden */
-  font-size: 20px;
+/* Editable Inputs */
+.edit-info label {
+  display: block;
+  font-size: 14px;
   font-weight: bold;
-  color: white;
-  text-transform: uppercase;
+  color: #555;
+  margin-top: 10px;
 }
 
+.edit-info input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.edit-info input:focus {
+  border-color: #ff5733;
+  outline: none;
+}
+
+.edit-info input:disabled {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Buttons */
 button {
-  padding: 12px 25px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
   background-color: #ff5733;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button:hover {
   background-color: #e14c2d;
 }
 
-button:focus {
-  outline: none;
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-button:active {
-  transform: scale(0.98);
+#logout-btn {
+  background-color: #333;
+}
+
+#logout-btn:hover {
+  background-color: #222;
 }
 @media screen and (max-width: 768px) {
   .main-container {
@@ -116,35 +128,40 @@ button:active {
     width: 90%;
   }
 
-  h1 {
-    font-size: 22px;
+  h1, h2 {
+    font-size: 20px;
   }
 
   .subtitle {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .profile-icon {
     width: 70px;
     height: 70px;
-    font-size: 30px;
-  }
-
-  .profile-icon i {
-    font-size: 30px;
-  }
-
-  .profile-icon span {
-    font-size: 16px;
+    font-size: 35px;
   }
 
   .user-info p {
     font-size: 14px;
   }
 
+  .edit-info label {
+    font-size: 13px;
+  }
+
+  .edit-info input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
   button {
     font-size: 14px;
     padding: 10px;
+  }
+
+  #logout-btn {
+    font-size: 14px;
   }
 }
 
@@ -154,34 +171,35 @@ button:active {
     width: 95%;
   }
 
-  h1 {
-    font-size: 20px;
-  }
-
-  .subtitle {
-    font-size: 12px;
+  h1, h2 {
+    font-size: 18px;
   }
 
   .profile-icon {
     width: 60px;
     height: 60px;
-    font-size: 28px;
-  }
-
-  .profile-icon i {
-    font-size: 28px;
-  }
-
-  .profile-icon span {
-    font-size: 14px;
+    font-size: 30px;
   }
 
   .user-info p {
     font-size: 13px;
   }
 
-  button {
-    font-size: 14px;
+  .edit-info label {
+    font-size: 12px;
+  }
+
+  .edit-info input {
+    font-size: 13px;
     padding: 8px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  #logout-btn {
+    font-size: 13px;
   }
 }
