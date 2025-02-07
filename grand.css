@@ -460,12 +460,16 @@ button:hover {
     justify-content: center;
   }
 
+  .categories-container .img {
+    width: 100%;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-  
+
 
   .main-content {
     margin-left: 0;
@@ -508,7 +512,7 @@ button:hover {
   .sidebar h2 {
     font-size: 18px;
   }
-  
+
 
   .sidebar ul li a {
     font-size: 14px;
@@ -558,6 +562,7 @@ button:hover {
     margin: 10px 0;
   }
 }
-.cart-btn{
-  margin-bottom:15px;
+
+.cart-btn {
+  margin-bottom: 15px;
 }
