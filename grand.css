@@ -423,6 +423,7 @@ button:hover {
   #search-bar {
     width: 60%;
     margin-left: 200px;
+    margin-top: 5px;
   }
 
   /* Offer Video Styling for larger screens (if needed) */
