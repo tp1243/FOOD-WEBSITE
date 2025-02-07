@@ -505,7 +505,7 @@ button:hover {
 
   .category-card {
     width: 85%;
-    margin-left: 1px;
+    margin-left: -10px;
   }
 
   button {
