@@ -556,3 +556,6 @@ button:hover {
     margin: 10px 0;
   }
 }
+.cart-btn{
+  margin-bottom:15px;
+}
