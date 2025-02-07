@@ -507,6 +507,9 @@ button:hover {
   .sidebar h2 {
     font-size: 18px;
   }
+  .cart-btn{
+    margin-bottom:50px;
+  }
 
   .sidebar ul li a {
     font-size: 14px;
