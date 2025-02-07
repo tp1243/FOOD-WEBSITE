@@ -415,9 +415,7 @@ button:hover {
   .sidebar {
     width: 200px;
   }
-.social-icons{
-  align-items: center;
-}
+
   .main-content {
     margin-left: 200px;
   }
@@ -449,7 +447,9 @@ button:hover {
   .dashboard {
     flex-direction: column;
   }
-
+  .social-icons{
+    align-items: center;
+  }
   .categories-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
