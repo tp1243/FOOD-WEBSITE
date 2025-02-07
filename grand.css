@@ -475,8 +475,8 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-right: 7px;
-    height: auto;
-  }
+    height: 70%;
+    }
 
   .video-set {
     width: 100%;
