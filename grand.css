@@ -400,37 +400,10 @@ button:hover {
   background-color: #f0f0f0;
 }
 
-
-@media screen and (max-width: 1024px) {
-  .sidebar {
-    width: 200px;
-  }
-
-  .main-content {
-    margin-left: 200px;
-  }
-
-  #search-bar {
-    width: 60%;
-    margin-left: 200px;
-  }
-
-  /* Offer Video Styling for larger screens (if needed) */
-  .offer-video-container { /* Container for offer videos */
-    display: flex;
-    flex-wrap: wrap; /* Allows videos to wrap to the next line */
-    justify-content: space-around; /* Distributes videos evenly */
-  }
-
-  .offer-video {
-    width: 30%; /* Adjust as needed */
-    margin: 10px;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .dashboard {
     flex-direction: column;
+    align-items: center;
   }
 
   .sidebar {
@@ -442,6 +415,7 @@ button:hover {
   .main-content {
     margin-left: 0;
     padding: 15px;
+    width: 100%;
   }
 
   #search-bar {
@@ -450,36 +424,42 @@ button:hover {
   }
 
   .categories-container {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .category-card {
+    width: 100%;
+    max-width: 180px; /* Adjust for better fit */
   }
 
   .video-set {
     width: 100%;
     height: auto;
-    margin-right: 28px;
   }
 
-  /* Offer Video Styling for medium screens */
-  .offer-video-container {
-    flex-direction: column; /* Stack videos vertically */
-    align-items: center;
-  }
-
-  .offer-video {
-    width: 80%; /* Make videos wider */
-    margin: 10px 0; /* Adjust margin */
+  .carousel-container {
+    width: 100%;
+    margin-left: 0;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .sidebar h2 {
-    font-size: 18px;
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .sidebar ul li a {
-    font-size: 14px;
-    padding: 8px;
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 10px;
   }
 
   header {
@@ -490,7 +470,6 @@ button:hover {
   .search-container {
     width: 100%;
     justify-content: center;
-    margin-left: 22px;
   }
 
   #search-bar {
@@ -498,28 +477,26 @@ button:hover {
     margin-left: 0;
   }
 
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr); /* Maintain 2x2 layout */
+    gap: 10px;
+  }
+
   .category-card {
-    width: 90%;
+    width: 100%;
+    max-width: 150px;
   }
 
   button {
     font-size: 14px;
-    padding: 8px 15px;
+    padding: 8px 12px;
+  }
+
+  .video-set {
+    width: 100%;
   }
 
   .carousel-container {
     width: 100%;
-    margin-left: 0;
-  }
-
-  /* Offer Video Styling for small screens */
-  .offer-video-container {
-    flex-direction: column; /* Ensure vertical stacking */
-    align-items: center;
-  }
-
-  .offer-video {
-    width: 90%; /* Full width on small screens */
-    margin: 10px 0;
   }
 }
