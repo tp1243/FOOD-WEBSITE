@@ -432,7 +432,12 @@ button:hover {
   .dashboard {
     flex-direction: column;
   }
-
+  .categories-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 15px;
+    justify-content: center;
+  }
   .sidebar {
     width: 100%;
     height: auto;
