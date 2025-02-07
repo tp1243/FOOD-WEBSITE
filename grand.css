@@ -447,9 +447,11 @@ button:hover {
   .dashboard {
     flex-direction: column;
   }
-  .social-icons{
-    align-items: center;
+
+  .social-icons {
+    margin-left: 10px;
   }
+
   .categories-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -478,7 +480,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-right: 7px;
-    }
+  }
 
   .video-set {
     width: 100%;
