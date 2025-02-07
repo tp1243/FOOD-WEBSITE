@@ -449,7 +449,7 @@ button:hover {
   }
 
   .social-icons {
-    margin-left: 45px;
+    margin-left: 60px;
   }
 
   .categories-container {
@@ -465,6 +465,7 @@ button:hover {
     height: auto;
     position: relative;
   }
+  
 
   .main-content {
     margin-left: 0;
@@ -507,9 +508,7 @@ button:hover {
   .sidebar h2 {
     font-size: 18px;
   }
-  .cart-btn{
-    margin-bottom:50px;
-  }
+  
 
   .sidebar ul li a {
     font-size: 14px;
